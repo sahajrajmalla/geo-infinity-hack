@@ -1,0 +1,47 @@
+[
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "bbox",
+        "kind": 5,
+        "importPath": "algo.src.landmark_scrape",
+        "description": "algo.src.landmark_scrape",
+        "peekOfCode": "bbox = \"27.6010367,85.4602795,27.6943733,85.5640106\"\n# Dictionary of categories and their associated amenities\namenities = {\n    \"Education\": [\"school\", \"university\", \"college\", \"library\"],\n    # \"Healthcare\": [\"hospital\", \"clinic\", \"doctors\", \"pharmacy\"],\n    # \"Transportation\": [\"bus_stop\", \"train_station\", \"airport\", \"parking\"],\n    # \"Food_and_Drink\": [\"restaurant\", \"cafe\", \"fast_food\", \"bar\"],\n    # \"Shopping\": [\"supermarket\", \"mall\", \"convenience\", \"clothes\"],\n    # \"Leisure_and_Entertainment\": [\"park\", \"playground\", \"cinema\", \"sports_centre\"],\n    # \"Accommodation\": [\"hotel\", \"motel\", \"guest_house\"],",
+        "detail": "algo.src.landmark_scrape",
+        "documentation": {}
+    },
+    {
+        "label": "amenities",
+        "kind": 5,
+        "importPath": "algo.src.landmark_scrape",
+        "description": "algo.src.landmark_scrape",
+        "peekOfCode": "amenities = {\n    \"Education\": [\"school\", \"university\", \"college\", \"library\"],\n    # \"Healthcare\": [\"hospital\", \"clinic\", \"doctors\", \"pharmacy\"],\n    # \"Transportation\": [\"bus_stop\", \"train_station\", \"airport\", \"parking\"],\n    # \"Food_and_Drink\": [\"restaurant\", \"cafe\", \"fast_food\", \"bar\"],\n    # \"Shopping\": [\"supermarket\", \"mall\", \"convenience\", \"clothes\"],\n    # \"Leisure_and_Entertainment\": [\"park\", \"playground\", \"cinema\", \"sports_centre\"],\n    # \"Accommodation\": [\"hotel\", \"motel\", \"guest_house\"],\n    # \"Financial_and_Professional\": [\"bank\", \"atm\", \"lawyer\", \"business\"],\n    # \"Public_Services\": [\"post_office\", \"police\", \"fire_station\", \"government\"],",
+        "detail": "algo.src.landmark_scrape",
+        "documentation": {}
+    },
+    {
+        "label": "base_url",
+        "kind": 5,
+        "importPath": "algo.src.landmark_scrape",
+        "description": "algo.src.landmark_scrape",
+        "peekOfCode": "base_url = \"http://overpass-api.de/api/interpreter\"\nfor category, amenity_list in amenities.items():\n    for amenity in amenity_list:\n        query = f\"\"\"\n        [out:json][timeout:60];\n        (\n          node[\"amenity\"=\"{amenity}\"]({bbox});\n          way[\"amenity\"=\"{amenity}\"]({bbox});\n          relation[\"amenity\"=\"{amenity}\"]({bbox});\n        );",
+        "detail": "algo.src.landmark_scrape",
+        "documentation": {}
+    }
+]
