@@ -221,7 +221,7 @@ function HomeCompo(props) {
               let remainingCharacters = i_cut.slice(1);
               // console.log(remainingCharacters)
               return (
-                <div className="rounded-xl w-full bg-gray-50 border  px-6 py-3">
+                <div key={i_name+index} className="rounded-xl w-full bg-gray-50 border  px-6 py-3">
                   <button onClick={() => dropdownChangeHandler(index)} className="flex overflow-scroll container-snap w-full items-center justify-between">
                     <h1 className="text-gray-700 text-sm font-semibold tracking-wide">
                       {i_name}
@@ -242,7 +242,7 @@ function HomeCompo(props) {
                     <p className='text-sm font-semibold text-gray-400'>Denotion</p>
                     <div className='flex mt-2 justify-between'>
 
-                      {remainingCharacters.map(item => <p className='text-[12px]'>{item}</p>)}
+                      {remainingCharacters.map(item => <p key={item.hashes} className='text-[12px]'>{item}</p>)}
 
                     </div>
                     <div className='w-full mt-2'>
