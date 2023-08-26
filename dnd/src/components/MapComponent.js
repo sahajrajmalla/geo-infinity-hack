@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import CustomMarkerIcon from "../assets/marker.svg"
 // import L from 'leaflet';
@@ -11,14 +11,18 @@ const customIcon = L.icon({
 });
 
 const MapComponent = (props) => {
+    const [isMounted, setIsMounted] = useState(false);
+
+    
     useEffect(() => {
         // To fix the map rendering issue
+        setIsMounted(true)
         const L = require('leaflet');
         // delete L.Icon.Default.prototype._getIconUrl;
 
     }, []);
     return (
-        <MapContainer center={[27.6338529, 85.5178667]} zoom={13} style={{ height: "100vh", width: "100%" }}>
+        isMounted && (<MapContainer center={[27.6338529, 85.5178667]} zoom={13} style={{ height: "100vh", width: "100%" }}>
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
@@ -40,6 +44,6 @@ const MapComponent = (props) => {
                 </Marker>
             ))}
         </MapContainer>
-    );
+    ));
 };
 export default MapComponent;

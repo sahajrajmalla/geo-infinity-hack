@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
-import MapComponent from '../components/MapComponent';
 import Hashes from "../assets/data.json"
+import dynamic from "next/dynamic"
+
+const Map = dynamic(() => import("../components/MapComponent.js"), { ssr:false })
+ 
+
 
 // const dropItems = [
 //   {
@@ -197,6 +201,8 @@ function HomeCompo(props) {
       setDropdown(index)
     }
   }
+  
+ 
 
   return (
     <div className='pl-12 w-full flex h-max'>
@@ -270,7 +276,7 @@ function HomeCompo(props) {
         </div>
       </div>
       <div className=' w-1/2 h-[89vh] bg-gray-500 gap-4 font-semibold flex'>
-        <MapComponent buildings={buildings} customMarkers={customMarkers} activeMarker = {dropdown} />
+        <Map buildings={buildings} customMarkers={customMarkers} activeMarker = {dropdown} />
       </div>
     </div>
   )
